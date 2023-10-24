@@ -8,15 +8,19 @@ body{
 .active{
     background: linear-gradient(135deg, #004AAD, #CB6CE6);
    border-radius: 25px;
-   color: #EDF2FF;
+   
    
 }
+#dashboard.active, #settings.active{
+    color: white;
+}
+
 .active svg{
     color: white;
 }
 
 .nav-link{
-    padding: 3px;
+    padding: 8px;
 }
 .nav-item{
     margin: 5px;

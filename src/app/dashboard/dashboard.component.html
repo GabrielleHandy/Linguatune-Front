@@ -1,39 +1,69 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Dashboard</title>
-    
-</head>
-<body>
-    <div class="container-fluid">
-       
 
-        <!-- Page Content -->
-        <div id="content">
-            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                <i class="fa fa-bars"></i>
-            </button>
+
+    <div class="container-fluid">
+        <div id="user-info" class="d-flex">
+           <img class="logo" src="/assets/avatarLogo.svg" alt="">
 
             <!-- Study Page 1 -->
-            <div id="page1" class="page">
-                <h2>Study Page 1</h2>
+            <div id="username">
+                <h4>UserName</h4>
                 <!-- Add your content for study page 1 here -->
             </div>
 
             <!-- Study Page 2 -->
-            <div id="page2" class="page">
-                <h2>Study Page 2</h2>
+            <div id="nativeLang" class="d-flex justify-content-center">
+                <img id="americanFlag" src="assets/americanFlag.svg" alt="">
+                <h4>English</h4>
                 <!-- Add your content for study page 2 here -->
             </div>
         </div>
+
+        <!-- Page Content -->
+        
     </div>
 
-    
-    <script>
-        // Toggle the sidebar
-        $("#sidebarCollapse").on("click", function () {
-            $("#sidebar").toggleClass("active");
-        });
-    </script>
-</body>
-</html>
+    <div id="content">
+        <button class="btn-primary btn add">Add a studypage</button>
+            <div class="d-flex pages">
+
+ <!-- Study Page 1 -->
+                <div id="page1" class="btn d-grid studypage">
+                    <div class="row">
+                        
+                            <img class="flag" id="americanFlag" src="assets/americanFlag.svg" alt="">
+                        
+                        <div class="col">
+                            <h4>Study Page 1</h4>
+                            <p id="stacks">number of stacks</p>
+                            <p>Last accessed: </p>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Add your content for study page 1 here -->
+                </div>
+
+                <div id="page2" class="btn d-grid studypage">
+                    <div class="row">
+
+                        <img class="flag" id="americanFlag" src="assets/americanFlag.svg" alt="">
+                        <div class="col">
+                            <h4>Study Page 1</h4>
+                            <p id="stacks">number of stacks</p>
+                            <p>Last accessed: </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Add your content for study page 1 here -->
+                </div>
+
+
+
+
+
+            </div>
+           
+        </div>
+ 
+
+

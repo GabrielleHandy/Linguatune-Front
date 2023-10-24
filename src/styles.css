@@ -3,4 +3,15 @@
 body{
     overflow: hidden;
     background-color: #EDF2FF;
+    height: 100vh;
+}
+@media  (max-width: 500px){
+    #nav{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+
+        justify-content: space-between;
+    }
 }

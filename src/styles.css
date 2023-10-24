@@ -5,6 +5,23 @@ body{
     background-color: #EDF2FF;
     height: 100vh;
 }
+.active{
+    background: linear-gradient(135deg, #004AAD, #CB6CE6);
+   border-radius: 25px;
+   color: #EDF2FF;
+   
+}
+.active svg{
+    color: white;
+}
+
+.nav-link{
+    padding: 3px;
+}
+.nav-item{
+    margin: 5px;
+   
+}
 @media  (max-width: 500px){
     #nav{
         position: absolute;

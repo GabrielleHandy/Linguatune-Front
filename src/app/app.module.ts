@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SettingsComponent } from './settings/settings.component';
+import { StudypageComponent } from './studypage/studypage.component';
 
 
 
@@ -17,6 +18,7 @@ import { SettingsComponent } from './settings/settings.component';
     SignupComponent,
     DashboardComponent,
     SettingsComponent,
+    StudypageComponent,
   
   ],
   imports: [

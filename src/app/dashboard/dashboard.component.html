@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    
+</head>
+<body>
+    <div class="container-fluid">
+       
+
+        <!-- Page Content -->
+        <div id="content">
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Study Page 1 -->
+            <div id="page1" class="page">
+                <h2>Study Page 1</h2>
+                <!-- Add your content for study page 1 here -->
+            </div>
+
+            <!-- Study Page 2 -->
+            <div id="page2" class="page">
+                <h2>Study Page 2</h2>
+                <!-- Add your content for study page 2 here -->
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        // Toggle the sidebar
+        $("#sidebarCollapse").on("click", function () {
+            $("#sidebar").toggleClass("active");
+        });
+    </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-.login-sign-container {
+.login-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,16 +7,18 @@
   
   .login-form {
     background: #fff;
-    padding: 2%;
+    padding: 0 2%;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    width: 70%;
+    /* width: 70%; */
     text-align: center;
-    height: 60%;
+    height: -webkit-fill-available;
     margin-left: 5px;
     position: absolute;
-    top: 33%;
-    left: 10%;
+    top: 18%;
+    /* left: 10%; */
+    display: flex;
+    flex-direction: column;
   }
   
   .form-group {
@@ -46,10 +48,10 @@
     background-position: center;
     background-size: contain;
 
-    width: 90%;
-    height: 70%;
+    width: 100%;
+    height: 40%;
     
     position: absolute;
-    top: -18%;
+    top: -11%;
     
 }

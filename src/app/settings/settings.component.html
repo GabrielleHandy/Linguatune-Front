@@ -1,33 +1,45 @@
+<div class="container">
+    <h1>Settings</h1>
+  
+    <form>
+      <div class="form-group">
+        <label for="usernameInput">Username</label>
+        <input type="text" class="form-control" id="usernameInput" placeholder="Enter your username">
+      </div>
+  
+      <div class="form-group">
+        <label for="passwordInput">Password</label>
+        <input type="password" class="form-control" id="passwordInput" placeholder="Enter your new password">
+      </div>
+  
+      <input type="submit" class="btn btn-primary" (click)="updateUser()">
+      
+    </form>
+    <div id="buttons" class="d-flex justify-items-between">
+        <button class="btn btn-primary" (click)="signOut()">Sign Out</button>
+        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" >Delete Account</button>
 
-    <div class="container">
-        <h1>Settings</h1>
-
-        <form>
-            <div class="form-group">
-                <label for="nameInput">Your Name</label>
-                <input type="text" class="form-control" id="nameInput" placeholder="Enter your name">
-            </div>
-
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="emailNotifications">
-                <label class="form-check-label" for="emailNotifications">Email Notifications</label>
-            </div>
-
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="smsNotifications">
-                <label class="form-check-label" for="smsNotifications">SMS Notifications</label>
-            </div>
-
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="notificationType" id="notificationEmail">
-                <label class="form-check-label" for="notificationEmail">Email</label>
-            </div>
-
-            <div class="form-check">
-                <input type="radio" class="form-check-input" name="notificationType" id="notificationSms">
-                <label class="form-check-label" for="notificationSms">SMS</label>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Save Settings</button>
-        </form>
     </div>
+  
+    <!-- Delete Account Confirmation Modal -->
+    <div id="deleteModal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Delete Account</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete your account? This action is irreversible.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger" (click)="deleteAccount()">Delete Account</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

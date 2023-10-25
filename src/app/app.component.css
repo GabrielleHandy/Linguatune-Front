@@ -4,7 +4,8 @@ body{
     height: 100vh;
 }
 .navbar-brand img{
-    width: 158px;
+    
+    width: 130px;
     margin-bottom: -52px;
     margin-top: -46px;
 }

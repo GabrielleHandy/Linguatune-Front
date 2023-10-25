@@ -10,6 +10,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { StudypageComponent } from './studypage/studypage.component';
 import { CardsComponent } from './cards/cards.component';
 import { MusicComponent } from './music/music.component';
+import { SongComponent } from './song/song.component';
 
 
 
@@ -23,6 +24,7 @@ import { MusicComponent } from './music/music.component';
     StudypageComponent,
     CardsComponent,
     MusicComponent,
+    SongComponent,
   
   ],
   imports: [

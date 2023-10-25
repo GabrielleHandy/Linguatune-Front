@@ -15,6 +15,7 @@
     border: solid 4px #0c1839;
     justify-self: center;
     display: flex;
+    border-radius: 25px;
 }
 
 .image-container {

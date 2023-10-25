@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SettingsComponent } from './settings/settings.component';
 import { StudypageComponent } from './studypage/studypage.component';
 import { CardsComponent } from './cards/cards.component';
+import { MusicComponent } from './music/music.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:'signup', component: SignupComponent},
   {path:'dashboard', component: DashboardComponent},
   {path:"settings", component: SettingsComponent},
-  {path: "studypage", component: StudypageComponent ,children :[ {path:'cards' , component:CardsComponent}, {path:'cards/:id', component:CardsComponent}, {path:'cards/:id/', component:CardsComponent} ]}
+  {path: "studypage/:id", component: StudypageComponent ,children :[ {path:'cards' , component:CardsComponent}, {path:'music', component:MusicComponent}, ]},
+  {path:'cards/:id/', component:CardsComponent}
 ];
 
 @NgModule({

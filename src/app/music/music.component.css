@@ -1,0 +1,31 @@
+#musicContainer{
+    background-color: #EDF2FF;
+    margin-left: 5%;
+    height: 80%;
+    width: 90%;
+    border: solid 4px #0c1839;
+    justify-self: center;
+    display: flex;
+    border-radius: 25px;
+    flex-wrap: wrap;
+}
+#musicSearch{
+    margin-top: 2%;
+    width:50%;
+}
+
+.song img{
+    width: 30%;
+    height:80px;
+   
+}
+.song{
+    width: 80%;
+    /* justify-content: space-evenly; */
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.379);
+    background: linear-gradient(135deg, #8c52ff67, #ff914d65);
+}
+.results{
+    text-align: center;
+    margin-top: 2%;
+}

@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SettingsComponent } from './settings/settings.component';
 import { StudypageComponent } from './studypage/studypage.component';
 import { CardsComponent } from './cards/cards.component';
+import { MusicComponent } from './music/music.component';
 
 
 
@@ -21,6 +22,7 @@ import { CardsComponent } from './cards/cards.component';
     SettingsComponent,
     StudypageComponent,
     CardsComponent,
+    MusicComponent,
   
   ],
   imports: [

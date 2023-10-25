@@ -1,0 +1,27 @@
+<div id="musicContainer" class="d-flex align-content-center flex-column" >
+    
+   
+    <form id="musicSearch">
+        <div class="form-group">
+            <input type="text" class="form-control" id="searchInput" placeholder="Search...">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Search By Artist</label>
+              </div>
+        </div>
+    </form>
+    
+    <div class="results">
+        <h2>Songs</h2>
+        <button class="song btn d-flex" [routerLink]="['/song', 1]">
+            <img src="assets/musicLogo.svg" alt="">
+            <div>
+
+                <h3>title</h3>
+                <h5>artit name</h5>
+            
+            </div>
+            
+        </button>
+
+</div>

@@ -32,10 +32,11 @@
   }
   
   img {
-    max-width: 80%; /* Ensure the image is responsive and doesn't exceed its container */
-    height:50%;
-
-  }
+    width: 90%; /* Ensure the image is responsive and doesn't exceed its container */
+    height:60%;
+    margin-top: 24px;
+}
+  
   
   p {
     font-size: 16px; /* Adjust the font size as needed */

@@ -9,6 +9,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { StudypageComponent } from './studypage/studypage.component';
 import { CardsComponent } from './cards/cards.component';
 import { MusicComponent } from './music/music.component';
+import { SongComponent } from './song/song.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'dashboard', component: DashboardComponent},
   {path:"settings", component: SettingsComponent},
   {path: "studypage/:id", component: StudypageComponent ,children :[ {path:'cards' , component:CardsComponent}, {path:'music', component:MusicComponent}, ]},
-  {path:'cards/:id/', component:CardsComponent}
+  {path:'cards/:id/', component:CardsComponent},
+  {path:'song/:id', component:SongComponent}
 ];
 
 @NgModule({

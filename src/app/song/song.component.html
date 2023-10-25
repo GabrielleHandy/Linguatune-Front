@@ -1,1 +1,109 @@
-<p>song works!</p>
+<div class="music row container-fluid">
+    <div class="col-4 note" *ngIf="clickedWord">
+        <div class="card" >
+            <div class="card-header text-align-center"><h2>{{clickedWord}}</h2></div>
+            <div class="card-body">
+                
+                <p class="card-text">This is a basic Bootstrap card. You can customize the content here.</p>
+                <form class="form">
+
+                    <div class="form-group">
+                        <label for="selectControl">Select an option:</label>
+                        <select id="selectControl" class="form-control" aria-placeholder="Choose a stack" required>
+                            <option value="" disabled selected>Select a Stack</option>
+                          <option value="option1">Option 1</option>
+                          <option value="option2">Option 2</option>
+                          <option value="option3">Option 3</option>
+                        </select>
+                      </div>
+                      <div class="form-group row justify-content-center">
+                        <div class="col-sm-10">
+                            <button type="submit" >Add card to Stack</button>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </form>
+                
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="col">
+
+        <div id="background" class="d-flex justify-content-center" style="background-image: url('/assets/practice.jpg');">
+            <div id="blackBackground" class="col">
+                <div class="d-flex flex-column align-content-center">
+                    <h2>Song Title </h2>
+                    <div class="form-check form-switch d-flex splitScreen  ">
+                    
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" [(ngModel)]="switchState" (ngModelChange)="onSwitchChange($event)">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Split Screen</label>
+                    </div>
+
+
+                </div>
+                
+                
+                  
+
+                <div class="d-flex justify-content-between lyricsContainer">
+                    <div class="col">
+                        
+                        <div id="lyrics" >
+                            <div id="line" *ngFor="let line of lyrics" >
+                               
+                            <span class="word"  (click)="wordClicked(word)" *ngFor="let word of line.words">{{word}} </span>
+                            </div>
+                           
+    </div>
+    
+                    </div>
+                    <div *ngIf="switchState" class="col translated">
+                        
+                        <div *ngFor="let line of lyrics">
+                            
+                        <span class="word"   *ngFor="let word of line.words">{{word}} </span>
+                        </div>
+    
+    
+                    </div>
+                  
+                   
+                    
+                        
+                       
+                   
+                   
+
+
+
+
+                
+               
+                    
+                
+
+                </div>
+              
+                <div class="row">
+                          
+                <audio class="audio" controls>
+                    <source src="music.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                </div>
+               
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

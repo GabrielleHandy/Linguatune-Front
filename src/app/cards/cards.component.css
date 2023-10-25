@@ -1,0 +1,44 @@
+#stacks{
+    color: #5604f7;
+    background: linear-gradient(135deg, #8c52ff80, #ff914d85);
+    border-radius: 100px;
+   
+    padding: 2px;
+   
+    
+}
+#cards{
+    background-color: #EDF2FF;
+    margin-left: 5%;
+    height: 80%;
+    width: 90%;
+    border: solid 4px #0c1839;
+    justify-self: center;
+    display: flex;
+}
+.stack{
+    background-image: url('/assets/stacks.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 50%;
+    flex-wrap: wrap;
+   
+}
+.image-container {
+    text-align: center; /* Center the content horizontally */
+    width: 60%;
+    height:35%
+  }
+  
+  img {
+    max-width: 80%; /* Ensure the image is responsive and doesn't exceed its container */
+    height:50%;
+
+  }
+  
+  p {
+    font-size: 16px; /* Adjust the font size as needed */
+    margin-top: -10px; /* Add space between the image and the text */
+  }
+  

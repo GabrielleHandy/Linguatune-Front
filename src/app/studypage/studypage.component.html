@@ -1,21 +1,27 @@
-<div class="d-flex">
+<div class="d-flex mainContainer">
+<div class="d-flex btnContainer" >
 
-<button class="container-fluid">
+    <button routerLink="/studypage/cards"  routerLinkActive="blue"  class="container-fluid">
     
        
             
-      <h4>Cards</h4>  
-    
-    
-</button>
-<button class="container-fluid justify-items-between">
-    
-       
-            
-    <h4>Music</h4>  
+        <h4>Cards</h4>  
+      
+      
+  </button>
+  <button routerLink="/studypage/music" class="container-fluid justify-items-between">
+      
+         
+              
+      <h4>Music</h4>  
+  
+  
+  </button>
 
 
-</button>
+
+</div>
+
 
 </div>
 
@@ -27,28 +33,18 @@
 
 <div id="content">
     
-        <div  class="d-flex pages">
+        
 
 <!-- Study Page 1 -->
 
-            <div id="cards" [routerLink]="['/cards']" class="btn d-grid studypage">
-                <div class="stack">
-                    
-                       
-                    
-                    
-                    
-                </div>
-                
-            </div>
-       
+       <router-outlet></router-outlet>
 
 
 
 
 
 
-        </div>
+      
        
 </div>
 

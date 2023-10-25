@@ -1,46 +1,38 @@
-.container-fluid{
+.mainContainer{
     
-    
-    justify-content: center;
-    display:flex ;
-    align-items: center;
-    width:50%;
-    height: 100px;
-    border-top: solid 5px #F7B864;
-    border-radius: 20px 20px 0 0;
-    margin-top: 55px;
+ 
+  
+    height: 128px;
     background-color: #CEDBFF;
     
     align-items: center;
     justify-content: center;
+}
+.btnContainer{
+    background-color: #EDF2FF;
+    width: 80%;
+    justify-content: center;
+    margin-bottom: -50px;
+    border-radius: 20px 20px 0  0;
+
+}
+.btnContainer button{
+    margin: 18px;
+    width: fit-content;
+    border-radius: 50px;
+    border: #004AAD solid 2px;
+    
+
 }
 #content{
     background-color: #CEDBFF;
-   
-   height:100%;
-}
-#user-info{
-  
-    border-radius: 0px 20pxpx 2px 0;
-    
-
-
-    justify-content: space-around;
-   
-
+    height: 100%;
+   width: 100%;
 }
     
 
     
-#username{
-    background: #EDF2FF;
-    border-radius: 50px;
-    text-align: center;
-    margin-top: -20%;
-    width: fit-content;
-    align-self: center;
-    padding: 5px;
-}
+
 img.logo{
     width: auto;
     height: 40%;
@@ -51,31 +43,18 @@ img.logo{
     
 
 }
-#nativeLang{
-    background: #EDF2FF;
-    border-radius: 50px;
-    margin-top: 2px;
-}
-#americanFlag{
-    width: 30px;
-}
-#content div{
-    height: max-content;
-}
+
+
 .btn{
     width: 50%;
 }
 
-div #cards{
-    height: 411px;
-    width: 100%;
-    background-color: #EDF2FF;
-}
+
 
 .studypage{
    margin: 5px;
    border-radius: 15px;
-   background-color: #EDF2FF;
+   /* background-color: #EDF2FF; */
    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
    
 }
@@ -83,22 +62,14 @@ div #cards{
     box-shadow: 0px 0px 10px rgba(224, 217, 217, 0.2);
     border: solid 5px #F7B864;
 }
-#stacks{
-    color: #5604f7;
-    background: linear-gradient(135deg, #8c52ff80, #ff914d85);
-    border-radius: 100px;
-    width: 100%;
-    padding: 2px;
-   
-    
-}
+
 .add{
     margin: 10px 11px 0px 5px;
     width: fit-content;
 }
-.row{
-    height: inherit;
-}
-.pages{
-    height: 500px;
+
+
+.blue {
+    background-color: #004AAD;
+    color: whitesmoke;
 }

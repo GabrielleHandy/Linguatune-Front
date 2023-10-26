@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AuthServiceService } from '../auth-service.service';
 
 @Component({
   selector: 'app-settings',
@@ -8,11 +9,11 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 export class SettingsComponent {
   
 
-  constructor(private el : ElementRef) {}
+  constructor(private el : ElementRef, private authService:AuthServiceService) {}
 
   signOut() {
     //TODO Implement the signout functionality here
-    console.log('Sign Out clicked');
+    this.authService.logoutUser();
   }
 
   updateUser(){

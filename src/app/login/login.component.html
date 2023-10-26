@@ -6,6 +6,7 @@
     <form class="login-form">
       <h1>Login</h1>
       <div class="form-group row">
+        <p *ngIf="error">{{error}}</p>
         <label for="username">Email:</label>
         <input type="text" id="username" class="form-control col-sm-2 " name="username" [(ngModel)]="username" required>
       </div>

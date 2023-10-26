@@ -6,7 +6,7 @@
 
             <!-- Study Page 1 -->
             <div id="username">
-                <h4>UserName</h4>
+                <h4>{{user.userName}}</h4>
                 <!-- Add your content for study page 1 here -->
             </div>
 
@@ -28,15 +28,15 @@
 
  <!-- Study Page 1 -->
  
-                <button id="1" [routerLink]="['/studypage', 1]" class="btn d-grid studypage">
+                <button *ngFor="let page of pages" id={{page.id}} [routerLink]="['/studypage', page.id]" class="btn d-grid studypage">
                     <div class="row">
                         
-                            <img class="flag" id="americanFlag" src="assets/americanFlag.svg" alt="">
+                            <img class="flag" id="americanFlag" src="assets/{{page.language.languageCode}}.svg" alt="">
                         
                         <div class="col">
-                            <h4>Study Page 1</h4>
-                            <p id="stacks">number of stacks</p>
-                            <p>Last accessed: </p>
+                            <h4>{{page.name}}</h4>
+                            <p id="stacks">{{page.stacks}} number of stacks</p>
+                            <p>Last accessed: {{page.dateAccessed | date: 'MM/dd/yyyy'}}</p>
                         </div>
                         
                     </div>

@@ -11,6 +11,9 @@ import { StudypageComponent } from './studypage/studypage.component';
 import { CardsComponent } from './cards/cards.component';
 import { MusicComponent } from './music/music.component';
 import { SongComponent } from './song/song.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FlashCardComponent } from './flash-card/flash-card.component';
+
 
 
 
@@ -25,12 +28,15 @@ import { SongComponent } from './song/song.component';
     CardsComponent,
     MusicComponent,
     SongComponent,
+    FlashCardComponent,
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,16 +10,17 @@ import { StudypageComponent } from './studypage/studypage.component';
 import { CardsComponent } from './cards/cards.component';
 import { MusicComponent } from './music/music.component';
 import { SongComponent } from './song/song.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
+  {path: '',component:DashboardComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path:'signup', component: SignupComponent},
   {path:'dashboard', component: DashboardComponent},
-  {path:"settings", component: SettingsComponent},
-  {path: "studypage/:id", component: StudypageComponent ,children :[ {path:'cards' , component:CardsComponent}, {path:'music', component:MusicComponent}, ]},
-  {path:'cards/:id/', component:CardsComponent},
-  {path:'song/:id', component:SongComponent}
+  {path:"settings", component: SettingsComponent, canActivate: [AuthGuard]},
+  {path: "studypage/:id", component: StudypageComponent,  children :[ {path:'cards' , component:CardsComponent}, {path:'music', component:MusicComponent}, ], canActivate: [AuthGuard]},
+  {path:':id/cards/:id/', component:CardsComponent, canActivate: [AuthGuard]},
+  {path:'song/:id', component:SongComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

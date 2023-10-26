@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../user.service';
+import { CardsService } from '../cards.service';
+import { HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-studypage',
@@ -7,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./studypage.component.css']
 })
 export class StudypageComponent {
+  
 
-
+  
 }

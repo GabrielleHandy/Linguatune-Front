@@ -10,16 +10,16 @@ import { UserService } from '../user.service';
 })
 export class CardsComponent implements OnInit {
   stacks: any[] = [];
-
+  studyPageId: string = "";
   constructor(private userService: UserService,  private cardsService: CardsService, private router: ActivatedRoute) {
     
   }
   ngOnInit(): void {
     
     (this.router.parent as ActivatedRoute).params.subscribe(params => {
-      const productId = params['id'];
+      this.studyPageId = params['id'];
       
-      this.cardsService.getStacks(productId).subscribe(stack => {
+      this.cardsService.getStacks(this.studyPageId).subscribe(stack => {
         console.log( (stack as any).data)
         this.stacks = ( stack as any).data})
     });

@@ -11,6 +11,7 @@ import { CardsComponent } from './cards/cards.component';
 import { MusicComponent } from './music/music.component';
 import { SongComponent } from './song/song.component';
 import { AuthGuard } from './auth.guard';
+import { FlashCardComponent } from './flash-card/flash-card.component';
 
 const routes: Routes = [
   {path: '',component:DashboardComponent, canActivate: [AuthGuard]},
@@ -19,7 +20,7 @@ const routes: Routes = [
   {path:'dashboard', component: DashboardComponent},
   {path:"settings", component: SettingsComponent, canActivate: [AuthGuard]},
   {path: "studypage/:id", component: StudypageComponent,  children :[ {path:'cards' , component:CardsComponent}, {path:'music', component:MusicComponent}, ], canActivate: [AuthGuard]},
-  {path:':id/cards/:id/', component:CardsComponent, canActivate: [AuthGuard]},
+  {path:':studyId/cards/:cardId', component:FlashCardComponent, canActivate: [AuthGuard]},
   {path:'song/:id', component:SongComponent, canActivate: [AuthGuard] }
 ];
 

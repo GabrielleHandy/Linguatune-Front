@@ -13,6 +13,8 @@ import { MusicComponent } from './music/music.component';
 import { SongComponent } from './song/song.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FlashCardComponent } from './flash-card/flash-card.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 
 
@@ -35,7 +37,8 @@ import { FlashCardComponent } from './flash-card/flash-card.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule
     
   ],
   providers: [],

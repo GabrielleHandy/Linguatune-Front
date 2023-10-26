@@ -1,6 +1,6 @@
 
 <div id="cards" class="flex">
-    <div *ngFor="let stack of stacks" class="image-container" [routerLink]="['/cards', stack.id]" >
+    <div *ngFor="let stack of stacks" class="image-container" [routerLink]="['/' + studyPageId +'/cards/'+ stack.id]" >
         <img src="/assets/stacks.svg" alt="Image Description"  data-toggle="popover" data-placement="top" [title]="'Percentage Complete ' + stack.percentageCorrect + '%'" data-bs-trigger="hover">
         <p>{{stack.title}}</p>
       </div>

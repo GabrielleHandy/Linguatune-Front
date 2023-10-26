@@ -1,1 +1,31 @@
 <p>flash-card works!</p>
+<div class="container">
+<div id="title"></div>
+<div id="flashCard" > 
+    
+    <div *ngFor="let card of cards" class="card" id={{card.id}}>
+        
+        <div class="card-body flashcard">
+          <h2 class="card-title">{{card.originalText}}</h2>
+          <h4 class="card-text rightAnswer"  *ngIf="guessMade">{{card.translatedText}}</h4>
+
+          
+        </div>
+        <div class="card-footer">
+            <a [routerLink]="['/song', card.fromSong.id]" class="btn btn-primary">from song:  {{card.fromSong.title}} - {{card.fromSong.artist}}</a>
+
+        </div>
+      </div>
+      
+      <mat-paginator  [pageSize]="pageSize" [length]="totalItems" (page)="onPageChange($event)"></mat-paginator>
+
+</div>
+<div id="answer">
+    <div class="form-group row ">
+        {{guess}}
+        <input type="text" id="guess" [(ngModel)] = "guess" (keydown)="onKeyPress($event)">
+    </div>
+
+</div>
+
+</div>

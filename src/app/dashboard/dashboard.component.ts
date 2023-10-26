@@ -21,7 +21,10 @@ export class DashboardComponent implements OnInit {
   this.userService.getPages().subscribe(p => 
       {if((p as any).message == 'Success'){
         this.pages = (p as any).data;
-        this.pages.forEach(page => this.cardsService.getStacks(page.id).subscribe(result => page["stacks"]= (result as any).data.length))}
+        this.pages.forEach(page => {
+          sessionStorage.setItem(page.language.name, page.id)
+          
+          this.cardsService.getStacks(page.id).subscribe(result => page["stacks"]= (result as any).data.length)})}
 
   })
 }

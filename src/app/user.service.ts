@@ -6,16 +6,20 @@ import { AuthServiceService } from './auth-service.service';
   providedIn: 'root'
 })
 export class UserService {
-
+  private headers = new HttpHeaders({
+    'Authorization': `Bearer ${sessionStorage["token"]}`,
+  });
   constructor(private http: HttpClient, private authService: AuthServiceService) {}
 
   getPages (){
     const backendUrl = "http://localhost:1234/api/studypages/"
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${sessionStorage["token"]}`,
-    });
-    return this.http.get(backendUrl, {headers: headers})
+    
+    return this.http.get(backendUrl, {headers: this.headers})
 
+  }
+  getSong(id:string){
+    const backendUrl = `http://localhost:1234/api/songs/${id}`
+    return this.http.get(backendUrl, {headers: this.headers})
   }
   
 }

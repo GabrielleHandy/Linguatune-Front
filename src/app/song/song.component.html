@@ -36,10 +36,10 @@
     </div>
     <div class="col">
 
-        <div id="background" class="d-flex justify-content-center" style="background-image: url('/assets/practice.jpg');">
+        <div id="background" class="d-flex justify-content-center" style="background-image: url({{defaultSong.pictureLink}});">
             <div id="blackBackground" class="col">
                 <div class="d-flex flex-column align-content-center">
-                    <h2>Song Title </h2>
+                    <h2 *ngIf="defaultSong">{{defaultSong.title}} </h2>
                     <div class="form-check form-switch d-flex splitScreen  ">
                     
                     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" [(ngModel)]="switchState" (ngModelChange)="onSwitchChange($event)">
@@ -56,9 +56,9 @@
                     <div class="col">
                         
                         <div id="lyrics" >
-                            <div id="line" *ngFor="let line of lyrics" >
+                            <div class="line"  *ngFor="let lyric of lyricsData.slice(startDisplayIndex, endDisplayIndex + 1)" [class.current-lyric]="isCurrentLyric(lyric)">
                                
-                            <span class="word"  (click)="wordClicked(word)" *ngFor="let word of line.words">{{word}} </span>
+                            <span class="word"  (click)="wordClicked(word, lyric.startTimeMs)" *ngFor="let word of lyric.split ">{{word}} </span>
                             </div>
                            
     </div>
@@ -91,10 +91,10 @@
 
                 </div>
               
-                <div class="row">
+                <div class="row audio-row">
                           
-                <audio class="audio" controls>
-                    <source src="music.mp3" type="audio/mpeg">
+                <audio class="audio" controls (timeupdate)="onAudioTimeUpdate($event)">
+                    <source *ngIf="defaultSong" [src]='["assets/mp3/"+ defaultSong.uri + ".mp3"]' type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
                 </div>

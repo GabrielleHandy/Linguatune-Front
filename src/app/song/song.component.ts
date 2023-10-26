@@ -182,7 +182,18 @@ export class SongComponent implements OnInit {
     
   }
   makeNewStack(){
-    
+    const stack:any = {}
+    if(this.chosenName){
+     stack['title'] = this.chosenName;
+
+    }
+    this.cardService.makeAStack(this.studyPageId, stack).subscribe(data =>{
+
+      let id = (data as any).data.id
+      this.createCard(id)
+
+
+    })
 
   }
 

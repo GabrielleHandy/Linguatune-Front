@@ -11,6 +11,8 @@ import { UserService } from '../user.service';
 export class CardsComponent implements OnInit {
   stacks: any[] = [];
   studyPageId: string = "";
+  newStack: boolean = false;
+  chosenName: string = "";
   constructor(private userService: UserService,  private cardsService: CardsService, private router: ActivatedRoute) {
     
   }
@@ -25,6 +27,18 @@ export class CardsComponent implements OnInit {
     });
     
   }
+  seeMakeNewStack(){
+    this.newStack = !this.newStack;
+  }
+  makeNewStack(){
+    const stack:any = {}
+    if(this.chosenName){
+     stack['title'] = this.chosenName;
+
+    }
+    this.cardsService.makeAStack(this.studyPageId, stack).subscribe(data =>{
+      alert("Successfully created!")
+    })}
 
 
 }

@@ -1,4 +1,16 @@
+.flashcard .card-body, .flashcard .card-footer{
+    
+    background-image: url('/assets/noteCard.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .flashcard{
     text-align: center;
-    height:50%;
+    height:300px;
+}
+.flashcard .card-header{
+
+ background-color: whitesmoke;
+ border-bottom: red solid 3px;
 }

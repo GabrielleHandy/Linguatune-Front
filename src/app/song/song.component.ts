@@ -38,7 +38,7 @@ export class SongComponent implements OnInit {
 
   wordClicked(wordClicked:string, time:number):void{
     this.gotToTime(time)
-    wordClicked = wordClicked.replace(/[^\w\s]/g, '')
+    wordClicked = wordClicked.replace(/(^[^a-zA-Z0-9']+)|([^a-zA-Z0-9']+$)/g, '')
     this.translateWord(wordClicked);
     
     this.clickedWord = wordClicked;
@@ -124,19 +124,20 @@ export class SongComponent implements OnInit {
   }
 
   translateWord(word: string): void{
-    const url = `https://microsoft-translator-text.p.rapidapi.com/translate?to%5B0%5D=en&api-version=3.0&from=${this.defaultSong.originalLan}&profanityAction=NoAction&textType=plain`;
-    const 
-    headers = new HttpHeaders({
-    'content-type': 'application/json',
-    'X-RapidAPI-Key': 'e1c24ca7f0mshe2dc52971ce201ap1ccd39jsnde62d2a67291',
-    'X-RapidAPI-Host': 'microsoft-translator-text.p.rapidapi.com'
-    })
+    // const url = `https://microsoft-translator-text.p.rapidapi.com/translate?to%5B0%5D=en&api-version=3.0&from=${this.defaultSong.originalLan}&profanityAction=NoAction&textType=plain`;
+    // const 
+    // headers = new HttpHeaders({
+    // 'content-type': 'application/json',
+    // 'X-RapidAPI-Key': 'e1c24ca7f0mshe2dc52971ce201ap1ccd39jsnde62d2a67291',
+    // 'X-RapidAPI-Host': 'microsoft-translator-text.p.rapidapi.com'
+    // })
 
-    const body = [{Text: word}]
+    // const body = [{Text: word}]
 
-    this.http.post(url, body, {headers: headers}).subscribe(data => {
-    this.translatedWord = ( data as any)[0].translations[0].text
-    })
+    // this.http.post(url, body, {headers: headers}).subscribe(data => {
+    // this.translatedWord = ( data as any)[0].translations[0].text
+    // })
+    this.translatedWord = "translated";
 
   }
   getStudyPageStacks(){
@@ -145,6 +146,29 @@ export class SongComponent implements OnInit {
 
 
     })
+  }
+
+  createCard(){
+    const card = {translatedText: this.translatedWord,
+    originalText: this.clickedWord}
+    const stackId = document.querySelector("select")?.value;
+    
+    (document.querySelector("select")as HTMLElement).style.border = "";
+
+    if(stackId) {
+      this.cardService.makeCard(card, stackId, this.defaultSong.id).subscribe(card => {
+        
+        alert("Card added")
+      this.clickedWord = "";
+      })
+      
+
+    }else{
+      ((document.querySelector("select")as HTMLElement).style.border ) = "1px solid red"
+      alert("please choose a stack to add card to")
+
+    }
+    
   }
 
 }

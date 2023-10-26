@@ -30,9 +30,9 @@ export class CardsService {
     return this.http.get(backendUrl, {headers: this.headers});
   }
 
-  makeCard(card:any, stackId: string){
-    const backendUrl = `http://localhost:1234/api/flashcards/create/${stackId}`
-    return this.http.post(backendUrl, {headers: this.headers, body: JSON.stringify(card)});
+  makeCard(card:any, stackId: string, songId: string){
+    const backendUrl = `http://localhost:1234/api/flashcards/song/${songId}/create/${stackId}`
+    return this.http.post(backendUrl, card,{headers: this.headers});
 
   }
 

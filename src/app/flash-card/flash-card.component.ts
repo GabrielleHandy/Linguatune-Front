@@ -17,7 +17,18 @@ export class FlashCardComponent  implements OnInit {
   pageSize: number = 1;
   totalItems: number = 1;
   guessMade: boolean = false;
+  currentPage: number = 1;
+  itemsPerPage: number = 1; // Set the number of items per page
 
+  // You may want to calculate the total number of pages based on your data.
+  get totalNumberOfPages(): number {
+    return Math.ceil(this.cards.length / this.itemsPerPage);
+  }
+
+  // Function to change the current page
+  setPage(pageNumber: number): void {
+    this.currentPage = pageNumber;
+  }
 
   constructor(private userService: UserService,  private cardsService: CardsService, private router: ActivatedRoute) {
     

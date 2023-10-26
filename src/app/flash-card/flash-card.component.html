@@ -2,24 +2,29 @@
 <div class="container">
 <div id="title"></div>
 <div id="flashCard" > 
-    
-    <div *ngFor="let card of cards" class="card" id={{card.id}}>
-        
-        <div class="card-body flashcard">
-          <h2 class="card-title">{{card.originalText}}</h2>
-          <h4 class="card-text rightAnswer"  *ngIf="guessMade">{{card.translatedText}}</h4>
+    <div *ngFor="let card of cards.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)" class="card flashcard" id="{{card.id}}">
+        <div class="card-header"><h2 class="card-title">{{card.originalText}}</h2></div>
 
-          
-        </div>
-        <div class="card-footer">
-            <a [routerLink]="['/song', card.fromSong.id]" class="btn btn-primary">from song:  {{card.fromSong.title}} - {{card.fromSong.artist}}</a>
-
-        </div>
+        <div class="card-body">
+            
+            <h4 class="card-text rightAnswer"  *ngIf="guessMade">{{card.translatedText}}</h4>
+  
+            
+          </div>
+          <div class="card-footer">
+              <a [routerLink]="['/song', card.fromSong.id]" class="btn btn-primary">from song:  {{card.fromSong.title}} - {{card.fromSong.artist}}</a>
+  
+          </div>
       </div>
+   
       
-      <mat-paginator  [pageSize]="pageSize" [length]="totalItems" (page)="onPageChange($event)"></mat-paginator>
-
+      
+      
 </div>
+<div class="pagination">
+    <button [disabled]="currentPage === 1" (click)="setPage(currentPage - 1)">Previous</button>
+    <button [disabled]="currentPage === totalNumberOfPages" (click)="setPage(currentPage + 1)">Next</button>
+  </div>
 <div id="answer">
     <div class="form-group row ">
         {{guess}}

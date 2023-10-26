@@ -37,9 +37,9 @@ export class FlashCardComponent  implements OnInit {
     
     this.router.params.subscribe(params => {
       this.cardId = params['cardId'];
-      this.studypageId = params['studypageId']
+      this.studypageId = params['studyId']
       this.cardsService.getCards(this.cardId).subscribe(card => {
-        console.log( (card as any).data)
+        console.log(this.studypageId)
         this.cards = ( card as any).data})
 
         

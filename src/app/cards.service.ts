@@ -28,6 +28,12 @@ export class CardsService {
 
     return this.http.get(backendUrl, {headers: this.headers});
   }
+  deleteStackById(id: string){
+    const backendUrl = `http://localhost:1234/api/stacks/delete/${id}`
+
+    return this.http.delete(backendUrl, {headers: this.headers});
+
+  }
 
   getCards(id: string){
     const backendUrl = `http://localhost:1234/api/flashcards/stack/${id}`

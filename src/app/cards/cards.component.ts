@@ -13,6 +13,8 @@ export class CardsComponent implements OnInit {
   studyPageId: string = "";
   newStack: boolean = false;
   chosenName: string = "";
+  chosenVal : string = "";
+  editStack: boolean = false;
   constructor(private userService: UserService,  private cardsService: CardsService, private router: ActivatedRoute) {
     
   }
@@ -22,7 +24,7 @@ export class CardsComponent implements OnInit {
       this.studyPageId = params['id'];
       
       this.cardsService.getStacks(this.studyPageId).subscribe(stack => {
-        console.log( (stack as any).data)
+        
         this.stacks = ( stack as any).data})
     });
     
@@ -37,8 +39,38 @@ export class CardsComponent implements OnInit {
 
     }
     this.cardsService.makeAStack(this.studyPageId, stack).subscribe(data =>{
+      this.cardsService.getStacks(this.studyPageId).subscribe(stack => {
+        console.log( (stack as any).data)
+        this.stacks = ( stack as any).data})
       alert("Successfully created!")
     })}
 
+    edit(){
+      this.editStack = !this.editStack;
+    }
+
+    highlightStack(): void{
+      let stackList: NodeListOf<Element> = document.querySelectorAll('.stack');
+      console.log(stackList);
+      for(let stack of stackList as unknown as any[]){
+        (stack as HTMLElement).style.border= ""
+
+      }
+      console.log(this.chosenVal);
+      (document.getElementById(this.chosenVal) as HTMLElement).style.border = "5px solid red";
+    }
+
+    deleteStack(){
+      this.cardsService.deleteStackById(this.chosenVal).subscribe(card =>{
+        this.cardsService.getStacks(this.studyPageId).subscribe(stack => {
+          this.stacks = ( stack as any).data})
+          alert("Deleted successfully!")
+          this.edit();
+      }
+        
+      );
+      
+
+    }
 
 }

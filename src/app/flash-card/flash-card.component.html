@@ -1,7 +1,15 @@
-<p>flash-card works!</p>
-<div class="container">
+<div *ngIf="cards.length == 0" class="d-flex justify-content-center noCard">
+    <div class="d-flex flex-column justify-content-center">
+        <h1 class="text-center">You have no cards!</h1>
+        <img src="/assets/face.svg" alt="">
+        
+        <button class="btn awesomeBtn" [routerLink]="['/studypage/' + studypageId + '/music']">Discover some new music!</button>
+    </div>
+    
+</div>
+<div *ngIf="cards.length > 0" class="container">
 <div id="title"></div>
-<div id="flashCard" > 
+<div  id="flashCard" > 
     <div *ngFor="let card of cards.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)" class="card flashcard" id="{{card.id}}">
         <div class="card-header"><h2 class="card-title">{{card.originalText}}</h2></div>
 

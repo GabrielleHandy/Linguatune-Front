@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
       {if((p as any).message == 'Success'){
         this.pages = (p as any).data;
         this.pages.forEach(page => {
-          sessionStorage.setItem(page.language.name, page.id)
+          sessionStorage.setItem(page.language.languageCode, page.id)
           
           this.cardsService.getStacks(page.id).subscribe(result => page["stacks"]= (result as any).data.length)})}
 

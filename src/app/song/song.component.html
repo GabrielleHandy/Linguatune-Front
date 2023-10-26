@@ -8,12 +8,9 @@
                 <form class="form">
 
                     <div class="form-group">
-                        <label for="selectControl">Select an option:</label>
                         <select id="selectControl" class="form-control" aria-placeholder="Choose a stack" required>
                             <option value="" disabled selected>Select a Stack</option>
-                          <option value="option1">Option 1</option>
-                          <option value="option2">Option 2</option>
-                          <option value="option3">Option 3</option>
+                          <option *ngFor="let stack of stacks" value={{stack.id}}>{{stack.title}}</option>
                         </select>
                       </div>
                       <div class="form-group row justify-content-center">

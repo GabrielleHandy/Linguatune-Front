@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthServiceService } from './auth-service.service';
+import { CardsService } from './cards.service';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,6 @@ export class UserService {
     return this.http.get(backendUrl, {headers: this.headers})
 
   }
+ 
   
 }

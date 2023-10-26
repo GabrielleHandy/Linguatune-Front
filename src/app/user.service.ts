@@ -21,5 +21,10 @@ export class UserService {
     const backendUrl = `http://localhost:1234/api/songs/${id}`
     return this.http.get(backendUrl, {headers: this.headers})
   }
+  getSongTranslation(songId: string){
+    const backendUrl = `http://localhost:1234/api/translations/song/${songId}`
+    return this.http.get(backendUrl, {headers: this.headers})
+
+  }
   
 }

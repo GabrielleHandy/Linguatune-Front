@@ -4,7 +4,7 @@
             <div class="card-header text-align-center"><h2>{{clickedWord}}</h2></div>
             <div class="card-body">
                 
-                <p class="card-text">This is a basic Bootstrap card. You can customize the content here.</p>
+                <p *ngIf="translatedWord" class="card-text">{{translatedWord}}</p>
                 <form class="form">
 
                     <div class="form-group">
@@ -56,7 +56,7 @@
                     <div class="col">
                         
                         <div id="lyrics" >
-                            <div class="line"  *ngFor="let lyric of lyricsData.slice(startDisplayIndex, endDisplayIndex + 1)" [class.current-lyric]="isCurrentLyric(lyric)">
+                            <div class="line"  *ngFor="let lyric of lyricsData.slice(startDisplayIndex, endDisplayIndex + 1)" [class.current-lyric]="isCurrentLyric(lyric, lyricsData)">
                                
                             <span class="word"  (click)="wordClicked(word, lyric.startTimeMs)" *ngFor="let word of lyric.split ">{{word}} </span>
                             </div>
@@ -66,9 +66,9 @@
                     </div>
                     <div *ngIf="switchState" class="col translated">
                         
-                        <div *ngFor="let line of lyrics">
+                        <div *ngFor="let translatedLyric of lyrics.slice(startDisplayIndex, endDisplayIndex + 1)" [class.current-lyric]="isCurrentLyric(translatedLyric, lyrics)">
                             
-                        <span class="word"   *ngFor="let word of line.words">{{word}} </span>
+                        <span class="word"   *ngFor="let word of translatedLyric.split">{{word}} </span>
                         </div>
     
     

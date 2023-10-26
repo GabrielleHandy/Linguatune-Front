@@ -70,3 +70,10 @@ margin-left: 20%;
     font-size: larger;
     font-weight: bold;
 }
+.btn{
+    border: #004AAD solid 2px;
+}
+.btn:hover{
+    background-color: #004AAD;
+    color: whitesmoke;
+}

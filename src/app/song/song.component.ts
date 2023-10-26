@@ -10,8 +10,12 @@ import { CardsService } from '../cards.service';
   styleUrls: ['./song.component.css']
 })
 export class SongComponent implements OnInit {
+  studyPageId!: string;
   switchState: boolean = false; 
+  chosenVal: string = "";
 
+  chosenName: string = "";
+  newStack: boolean = false;
   //Variables for word interactiveness
   translatedWord: string = "";
   clickedWord: string = "";
@@ -58,7 +62,8 @@ export class SongComponent implements OnInit {
         
           
           })
-          
+        
+      
     }
 
   onAudioTimeUpdate(event: Event): void {
@@ -141,22 +146,28 @@ export class SongComponent implements OnInit {
 
   }
   getStudyPageStacks(){
-    this.cardService.getStacks((sessionStorage.getItem(this.defaultSong.originalLan)) as string).subscribe(data => {
+    this.studyPageId =((sessionStorage.getItem(this.defaultSong.originalLan)) as string);
+    this.cardService.getStacks(this.studyPageId).subscribe(data => {
       this.stacks = (data as any).data
-
+      
 
     })
   }
 
-  createCard(){
+  createCard(id:string){
     const card = {translatedText: this.translatedWord,
     originalText: this.clickedWord}
-    const stackId = document.querySelector("select")?.value;
-    
-    (document.querySelector("select")as HTMLElement).style.border = "";
+    let stackId:string = '';
+    if(id != ""){
 
-    if(stackId) {
-      this.cardService.makeCard(card, stackId, this.defaultSong.id).subscribe(card => {
+      stackId = id;
+    }else{
+      stackId = (document.querySelector("select") as HTMLSelectElement).value;
+    }
+    
+    
+    if(stackId != "0") {
+      this.cardService.makeCard(card, (stackId as string), this.defaultSong.id).subscribe(card => {
         
         alert("Card added")
       this.clickedWord = "";
@@ -170,6 +181,15 @@ export class SongComponent implements OnInit {
     }
     
   }
+  makeNewStack(){
+    
+
+  }
+
+  showNewStack(){
+    this.newStack = (this.chosenVal === "makeAStack");
+  }
+
 
 }
 

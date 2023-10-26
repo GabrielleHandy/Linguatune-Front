@@ -17,6 +17,10 @@ export class CardsService {
     return this.http.get(backendUrl, {headers: this.headers})
 
   }
+  makeAStack(studypageId: string, stack:any){
+    const backendUrl = `http://localhost:1234/api/stacks/create/${studypageId}`
+    return this.http.post(backendUrl,stack,{headers: this.headers});
+  }
 
   getStackById(id: string){
     const backendUrl = `http://localhost:1234/api/stacks/${id}`

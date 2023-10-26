@@ -5,16 +5,25 @@
             <div class="card-body">
                 
                 <p *ngIf="translatedWord" class="card-text">{{translatedWord}}</p>
-                <form class="form" #myForm="ngForm" (ngSubmit)="createCard()">
+                <form class="form" #myForm="ngForm" >
                     <div class="form-group">
-                      <select id="selectControl" class="form-control" name="selectedStack" ngModel required>
-                        <option disabled selected>Select a Stack</option>
+                      <select id="selectControl" class="form-control" name="selectedStack" [(ngModel)] ="chosenVal" (ngModelChange)="showNewStack()" required>
+                        <option value="0" disabled selected>Select a Stack</option>
                         <option *ngFor="let stack of stacks" [value]="stack.id">{{ stack.title }}</option>
+                        <option value="makeAStack">Create a new stack</option>
                       </select>
                     </div>
-                    <div class="form-group row justify-content-center">
+                    <div *ngIf="newStack" class="form-group">
+                        <input type="text" class="form-control" placeholder="Enter new stack name..." name="newStackName" [(ngModel)] ="chosenName"/>
+                      </div>
+                      <div *ngIf="newStack" class="form-group row justify-content-center">
+                        <div class="col-sm-10">
+                          <button class="btn" type="submit" (click)="makeNewStack()">Add card to stack called: {{chosenName? chosenName: "Stack "+( stacks.length + 1) }}</button>
+                        </div>
+                      </div>
+                    <div *ngIf="!newStack" class="form-group row justify-content-center">
                       <div class="col-sm-10">
-                        <button type="submit">Add card to Stack</button>
+                        <button type="submit" (click)="createCard('')">Add card to Stack</button>
                       </div>
                     </div>
                   </form>
@@ -25,6 +34,8 @@
         
     </div>
     <div class="col">
+        <br>
+        <button  *ngIf="studyPageId" [routerLink]="['/studypage/'+ studyPageId + '/cards']" class="btn">Back to StudyPage</button>
 
         <div id="background" class="d-flex justify-content-center" style="background-image: url({{defaultSong.pictureLink}});">
             <div id="blackBackground" class="col">
@@ -63,21 +74,6 @@
     
     
                     </div>
-                  
-                   
-                    
-                        
-                       
-                   
-                   
-
-
-
-
-                
-               
-                    
-                
 
                 </div>
               

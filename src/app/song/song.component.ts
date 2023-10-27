@@ -129,20 +129,20 @@ export class SongComponent implements OnInit {
   }
 
   translateWord(word: string): void{
-    // const url = `https://microsoft-translator-text.p.rapidapi.com/translate?to%5B0%5D=en&api-version=3.0&from=${this.defaultSong.originalLan}&profanityAction=NoAction&textType=plain`;
-    // const 
-    // headers = new HttpHeaders({
-    // 'content-type': 'application/json',
-    // 'X-RapidAPI-Key': 'e1c24ca7f0mshe2dc52971ce201ap1ccd39jsnde62d2a67291',
-    // 'X-RapidAPI-Host': 'microsoft-translator-text.p.rapidapi.com'
-    // })
+    const url = `https://microsoft-translator-text.p.rapidapi.com/translate?to%5B0%5D=en&api-version=3.0&from=${this.defaultSong.originalLan}&profanityAction=NoAction&textType=plain`;
+    const 
+    headers = new HttpHeaders({
+    'content-type': 'application/json',
+    'X-RapidAPI-Key': 'e1c24ca7f0mshe2dc52971ce201ap1ccd39jsnde62d2a67291',
+    'X-RapidAPI-Host': 'microsoft-translator-text.p.rapidapi.com'
+    })
 
-    // const body = [{Text: word}]
+    const body = [{Text: word}]
 
-    // this.http.post(url, body, {headers: headers}).subscribe(data => {
-    // this.translatedWord = ( data as any)[0].translations[0].text
-    // })
-    this.translatedWord = "translated";
+    this.http.post(url, body, {headers: headers}).subscribe(data => {
+    this.translatedWord = ( data as any)[0].translations[0].text
+    })
+    
 
   }
   getStudyPageStacks(){

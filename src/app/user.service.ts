@@ -26,9 +26,10 @@ export class UserService {
   }
 
   createPage(language: string){
+    language = language.trim();
     const backendUrl = `http://localhost:1234/api/studypages/create/${language}`
     
-    return this.http.post(backendUrl, {headers: this.headers})
+    return this.http.post(backendUrl,{}, {headers: this.headers})
 
   }
 

@@ -103,6 +103,7 @@ img.logo{
 }
 .studyPage{
     display: flex;
+    justify-content: space-around;
     
 }
 #musicPlayer{

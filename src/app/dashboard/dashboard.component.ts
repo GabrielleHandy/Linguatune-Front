@@ -38,7 +38,7 @@ showAddPage(){
 }
 alreadyHave(language: string){
   if(this.pages.length > 0){
-    return this.pages.find(page => page.language == language)? true : false;
+    return this.pages.find(page => page.language.name == language)? true : false;
   }
   return false;
 }
@@ -48,7 +48,7 @@ makeStudyPage(){
   if(this.studyPage.length >0){
     this.userService.createPage(this.studyPage).subscribe(data => {
       alert("Successfullly created!")
-
+      this.showAddPage()
       this.loadDashboard();
     })
     

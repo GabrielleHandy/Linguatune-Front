@@ -89,7 +89,7 @@ export class SongComponent implements OnInit {
   }
   getTranslation(songId: string): any{
     this.userService.getSongTranslation(songId).subscribe(translation =>{
-      console.log(translation)
+      
       this.lyrics = JSON.parse(( translation as any).data.lines)
       for(let line of this.lyrics){
         line['split'] = line.words.split(" ")}
@@ -121,11 +121,11 @@ export class SongComponent implements OnInit {
 
   }
   gotToTime(time: number): void{
-    const audioElement = document.querySelector('audio')
-    audioElement?.pause;
-    (audioElement as HTMLAudioElement).currentTime = ((time - 1000 )/ 1000 ) ;
-    (audioElement as HTMLAudioElement).pause;
-
+    const audioElement = document.querySelector('audio');
+    
+    (audioElement as HTMLAudioElement).currentTime = ((time - 1000 )/ 1000 );
+    
+    
   }
 
   translateWord(word: string): void{

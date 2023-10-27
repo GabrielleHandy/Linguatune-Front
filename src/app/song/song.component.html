@@ -1,14 +1,17 @@
 <div class="music row container-fluid">
     <div class="col-4 note" *ngIf="clickedWord">
         <div class="card" >
-            <div class="card-header text-align-center"><h2>{{clickedWord}}</h2></div>
+            <div class="card-header text-align-center d-flex justify-content-between"><h2>{{clickedWord}}</h2>
+              <button type="button" (click)="clickedWord = ''" class="btn-close" aria-label="Close"></button>
+
+            </div>
             <div class="card-body">
                 
                 <p *ngIf="translatedWord" class="card-text">{{translatedWord}}</p>
                 <form class="form" #myForm="ngForm" >
                     <div class="form-group">
                       <select id="selectControl" class="form-control" name="selectedStack" [(ngModel)] ="chosenVal" (ngModelChange)="showNewStack()" required>
-                        <option value="0" disabled selected>Select a Stack</option>
+                        <option value="" disabled selected>Select a Stack</option>
                         <option *ngFor="let stack of stacks" [value]="stack.id">{{ stack.title }}</option>
                         <option value="makeAStack">Create a new stack</option>
                       </select>

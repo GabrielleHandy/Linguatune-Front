@@ -56,22 +56,10 @@ export class FlashCardComponent  implements OnInit {
     this.cards = this.cards.slice(startIndex, startIndex + event.pageSize);
     this.guessMade = false;
   }
-  onKeyPress(event: KeyboardEvent) {
-    if (event.key === 'Enter') {
-      // Enter key was pressed
-      this.handleEnterKey();
-    }
+  toggleCardFlip(card: any) {
+    card.isFlipped = !card.isFlipped;
   }
 
-  handleEnterKey() {
-    // Your logic for handling the Enter key press
-    this.guessMade = true;
-    if(this.guess){
-      
-    }
-    console.log(this.guess);
-    this.guess="";
-    
-  }
+  
 
 }

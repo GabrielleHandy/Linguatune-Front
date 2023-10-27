@@ -106,10 +106,12 @@ img.logo{
     
 }
 #musicPlayer{
-    margin-top: -100px;
-    height: 10%;
-    width: 100%;
+    margin-top: -67px;
+    height: 81%;
+    width: 93%;
     margin-bottom: -6%;
+
+
 }
 
  img.image{
@@ -120,7 +122,7 @@ img.logo{
 }
 .studyPage div.card{
     width: 40%;
-    height: 40%;
+    height: 80%;
     display: flex;
 
     align-items: center;
@@ -128,6 +130,11 @@ img.logo{
     border-radius: 15px;
     box-shadow: 4px 4px 6px rgb(0 0 0 / 27%);
     
+}
+.studyPage div.card-body{
+    width: 100%;
+    text-wrap: nowrap;
+
 }
 p.card-text{
     margin-top: -7px;
@@ -145,4 +152,10 @@ div#noStudyPage {
     padding-right: 5px;
     border-radius: 100px;
     margin-bottom: -42%;
+}
+select#languages{
+    width:50%;
+}
+.content form{
+    width: 50%;
 }

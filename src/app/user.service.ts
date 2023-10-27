@@ -24,6 +24,14 @@ export class UserService {
     return this.http.get(backendUrl, {headers: this.headers})
 
   }
+
+  createPage(language: string){
+    const backendUrl = `http://localhost:1234/api/studypages/create/${language}`
+    
+    return this.http.post(backendUrl, {headers: this.headers})
+
+  }
+
   getSong(id:string){
     const backendUrl = `http://localhost:1234/api/songs/${id}`
     return this.http.get(backendUrl, {headers: this.headers})

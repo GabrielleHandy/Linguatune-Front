@@ -15,7 +15,7 @@
 
   </div>
   <div  *ngIf="editStack" class="form d-flex" style="margin-left: 20%; width: 100%;">
-    <button type="button" (click)="edit()"  class="btn-close" aria-label="Close"></button>
+    <button type="button" (click)="edit(true)"   class="btn-close" aria-label="Close"></button>
     <div class="form-group d-flex deleteStack">
       <select id="selectControl" class="form-control" name="selectedStack" [(ngModel)] ="chosenVal" (ngModelChange)="highlightStack()" required>
         <option value="0" disabled selected>Select a Stack</option>

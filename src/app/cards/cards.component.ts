@@ -45,18 +45,16 @@ export class CardsComponent implements OnInit {
       alert("Successfully created!")
     })}
 
-    edit(){
+    edit(closed: boolean = false){
+      if(closed){
+        this.removeHightlight();
+      }
       this.editStack = !this.editStack;
     }
 
     highlightStack(): void{
-      let stackList: NodeListOf<Element> = document.querySelectorAll('.stack');
-      console.log(stackList);
-      for(let stack of stackList as unknown as any[]){
-        (stack as HTMLElement).style.border= ""
-
-      }
-      console.log(this.chosenVal);
+      this.removeHightlight();
+      
       (document.getElementById(this.chosenVal) as HTMLElement).style.border = "5px solid red";
     }
 
@@ -71,6 +69,15 @@ export class CardsComponent implements OnInit {
       );
       
 
+    }
+    removeHightlight(): void {
+      let stackList: NodeListOf<Element> = document.querySelectorAll('.stack');
+      
+      for(let stack of stackList as unknown as any[]){
+        (stack as HTMLElement).style.border= ""
+
+      }
+      
     }
 
 }

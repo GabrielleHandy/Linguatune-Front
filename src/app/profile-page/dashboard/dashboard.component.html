@@ -1,0 +1,63 @@
+
+
+    <div class="container-fluid">
+        <div id="user-info" class="d-flex">
+           <img class="logo" src="./assets/avatarLogo.svg" alt="">
+
+            
+            <div id="username">
+                <h4>{{user.userName}}</h4>
+                
+            </div>
+
+            
+            <div id="nativeLang" class="d-flex justify-content-center">
+                <img id="americanFlag" src="./assets/americanFlag.svg" alt="">
+                <h4>English</h4>
+                
+            </div>
+            
+        </div>
+        
+        
+        
+    </div>
+
+    <div id="content" class="text-center">
+        <button class="btn-primary btn add" (click)="showAddPage()">Add a studypage</button>
+        <form *ngIf="show" name="languages" class="d-flex">
+            <div class="form-group">
+                <select  name="studyLanguages" id="languages" [(ngModel)]="studyPage" >
+                    <option disabled selected value="">Available Languages: More in future updates</option>
+                    <option *ngIf="!alreadyHave('French')" value="French">French</option>
+                    <option *ngIf="!alreadyHave('Spanish')" value="Spanish">Spanish</option>
+                </select>
+            </div>
+            <div>
+                <button (click)="makeStudyPage()">add</button>
+            </div>
+        </form>
+        
+        
+        <h3 *ngIf="!show && pages.length == 0">Looks like you dont have any study pages</h3>
+        <div *ngIf="pages.length == 0" id="noStudyPage"></div>
+        
+            <div *ngIf="pages.length > 0" class="d-flex pages">
+                <div *ngFor="let page of pages" id={{page.id}} [routerLink]="['/studypage', page.id]"   class="container studyPage">
+                    <div class="card">
+                      <img [src]="['./assets/' + page.language.name +'.svg']" class="card-img-top image" alt="Album Art">
+                      <div class="card-body">
+                        <h5 class="card-title">Stacks: {{page.stacks}} </h5>
+                        <img id="musicPlayer" src="./assets/musicPlayer.svg" alt="">
+                      </div>
+                    </div>
+                  </div>
+
+
+            </div>
+            
+           
+    </div>
+ 
+
+

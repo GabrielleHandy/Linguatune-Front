@@ -1,0 +1,58 @@
+
+.noCard > div > img{
+    width: 100%;
+    height: 50%;
+
+}
+.awesomeBtn{
+    background: linear-gradient(90deg, #004AAD, #CB6CE6);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+/* CSS for the card container */
+.flashcard {
+    text-align: center;
+    max-width: 500px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 45px;
+    height: 300px;
+    perspective: 800px; /* Define the perspective for 3D effect */
+  }
+  
+  /* CSS for the card front */
+  .card-front {
+    padding-top: 107px;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform 0.5s;
+    background-image: url('/assets/noteCard.svg');
+  }
+  
+  /* CSS for the card back */
+  .card-back {
+    padding-top: 107px;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    transform: rotateY(180deg); /* Initial flip to the back */
+    transition: transform 0.5s;
+    background-image: url('/assets/noteCard.svg');
+  }
+  
+  /* CSS to flip the card */
+  .flipped .card-front {
+    transform: rotateY(180deg);
+  }
+  
+  .flipped .card-back {
+    transform: rotateY(0deg);
+  }

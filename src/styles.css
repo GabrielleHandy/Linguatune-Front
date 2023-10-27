@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+body{
+    overflow: hidden;
+    background-color: #EDF2FF;
+    height: 100vh;
+}
+.active{
+    background: linear-gradient(135deg, #004AAD, #CB6CE6);
+   border-radius: 25px;
+   
+   
+}
+#dashboard.active, #settings.active{
+    color: white;
+}
+
+.active svg{
+    color: white;
+}
+
+.nav-link{
+    padding: 8px;
+}
+.nav-item{
+    margin: 5px;
+   
+}
+@media  (max-width: 500px){
+    #nav{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+
+        justify-content: space-between;
+    }
+}

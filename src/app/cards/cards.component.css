@@ -1,0 +1,85 @@
+#stacks{
+    color: #5604f7;
+    background: linear-gradient(135deg, #8c52ff80, #ff914d85);
+    border-radius: 100px;
+   
+    padding: 2px;
+   
+    
+}
+#cards{
+    background-color: #EDF2FF;
+    margin-left: 5%;
+    height: 80%;
+    width: 90%;
+    border: solid 4px #0c1839;
+    
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 25px;
+}
+
+.image-container {
+    text-align: center; /* Center the content horizontally */
+    width: 50%;
+    height:45%
+  }
+
+  .image-container svg{
+    margin-right: -29px;
+    width: 32px;
+    height: auto;
+  }
+  .image-container svg:hover{
+
+    color: red;
+  }
+  
+  img {
+    width: 90%; /* Ensure the image is responsive and doesn't exceed its container */
+    height:60%;
+    margin-top: 24px;
+}
+  
+  
+  p {
+    font-size: 16px; 
+    margin-top: -1px; /* Add space between the image and the text */
+  }
+  
+  .percentage{
+    width: 50px;
+    height: 50px;
+  }
+
+  .makeNew{
+    background-image: url('/assets/addButton.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50%;
+    width: 25%;
+    margin-left: 15px;
+
+
+  }
+  .newStack button{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .btns{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .btns .edit{
+    width: 25%;
+    height: fit-content;
+  }
+
+  .deleteStack{
+    width: 80%;
+    height: fit-content;
+}
+  

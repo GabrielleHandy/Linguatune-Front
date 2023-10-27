@@ -1,0 +1,12 @@
+body{
+    background-color: #EDF2FF;
+    overflow: hidden;
+    height: 100vh;
+}
+.navbar-brand img{
+    
+    width: 130px;
+    margin-bottom: -52px;
+    margin-top: -46px;
+}
+

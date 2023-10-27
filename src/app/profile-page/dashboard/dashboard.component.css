@@ -1,0 +1,162 @@
+
+.container-fluid{
+    background: linear-gradient(135deg, #004AAD, #CB6CE6);
+    /* height: 100%; */
+    width: 100%;
+    justify-content: center;
+    display:flex ;
+    align-items: center;
+    
+}
+#content{
+    border-top: solid 5px #F7B864;
+   border-radius: 20px 20px 0 0;
+  margin-top: -80px;
+   background-color: #CEDBFF;
+   
+   align-items: center;
+   justify-content: center;
+   
+   height:100%;
+}
+#user-info{
+  align-self: flex-start;
+    justify-content: center;
+    padding: 0;
+height: 300px;
+flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-top: -46px;
+    margin-bottom: 15px;
+}
+    
+
+    
+#username{
+    background: #EDF2FF;
+    border-radius: 50px;
+    text-align: center;
+    margin-top: -20%;
+    width: fit-content;
+    align-self: center;
+    padding: 5px;
+}
+img.logo{
+    width: auto;
+    height: 40%;
+    top: 22%;
+    margin-top: -6%;
+    padding-top: 0;
+    align-self: center;
+    
+
+}
+#nativeLang{
+    background: #EDF2FF;
+    border-radius: 50px;
+    margin-top: 2px;
+}
+#americanFlag{
+    width: 30px;
+}
+
+.btn{
+    width: 50%;
+    margin-left: 50px;
+}
+#americanFlag.flag{
+    width: 100px;
+    height: 50%;
+    margin-bottom: -5px;
+}
+.pages{
+    height: fit-content;
+}
+
+.studypage{
+   margin: 5px;
+   
+   background-color: #EDF2FF;
+   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+   
+}
+.studypage:hover{
+    box-shadow: 0px 0px 10px rgba(224, 217, 217, 0.2);
+    border: solid 5px #F7B864;
+}
+#stacks{
+    color: #5604f7;
+    background: linear-gradient(135deg, #8c52ff80, #ff914d85);
+    border-radius: 100px;
+    width: 100%;
+    padding: 2px;
+   
+    
+}
+.add{
+    margin: 10px 11px 0px 5px;
+    width: fit-content;
+}
+.row{
+    height: inherit;
+}
+.studyPage{
+    display: flex;
+    justify-content: space-around;
+    
+}
+#musicPlayer{
+    margin-top: -67px;
+    height: 81%;
+    width: 93%;
+    margin-bottom: -6%;
+
+
+}
+
+ img.image{
+    width: 80%;
+    height: 50%;
+    margin-bottom: -9%;
+    padding-top: 5px;
+}
+.studyPage div.card{
+    width: 40%;
+    height: 80%;
+    display: flex;
+
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 4px 4px 6px rgb(0 0 0 / 27%);
+    
+}
+.studyPage div.card-body{
+    width: 100%;
+    text-wrap: nowrap;
+
+}
+p.card-text{
+    margin-top: -7px;
+}
+
+div#noStudyPage {
+    background-image: url('/assets/noStudyPages.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 56%;
+    height: 70%;
+    
+    margin-left: 22%;
+    opacity: .5;
+    padding-right: 5px;
+    border-radius: 100px;
+    margin-bottom: -42%;
+}
+select#languages{
+    width:50%;
+}
+.content form{
+    width: 50%;
+}

@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  findRoute(): any { return((document.querySelector(".signup-container")) || (document.querySelector(".login-container"))) 
+}
   title = 'linguatune';
 }

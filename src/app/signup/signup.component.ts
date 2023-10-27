@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthServiceService } from '../auth-service.service';
 
 
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -14,6 +15,11 @@ export class SignupComponent {
   
   constructor(private authService: AuthServiceService){}
   signup() {
+    if(!this.email || !this.username || !this.password){
+      
+      alert("please complete all fields")
+      return 
+    }
     let user = {
       userName: this.username,
       password: this.password,

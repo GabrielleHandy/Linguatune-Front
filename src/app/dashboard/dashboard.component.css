@@ -60,11 +60,10 @@ img.logo{
 #americanFlag{
     width: 30px;
 }
-#content div{
-    height: max-content;
-}
+
 .btn{
     width: 50%;
+    margin-left: 50px;
 }
 #americanFlag.flag{
     width: 100px;
@@ -77,7 +76,7 @@ img.logo{
 
 .studypage{
    margin: 5px;
-   border-radius: 15px;
+   
    background-color: #EDF2FF;
    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
    
@@ -101,4 +100,49 @@ img.logo{
 }
 .row{
     height: inherit;
+}
+.studyPage{
+    display: flex;
+    
+}
+#musicPlayer{
+    margin-top: -100px;
+    height: 10%;
+    width: 100%;
+    margin-bottom: -6%;
+}
+
+ img.image{
+    width: 80%;
+    height: 50%;
+    margin-bottom: -9%;
+    padding-top: 5px;
+}
+.studyPage div.card{
+    width: 40%;
+    height: 40%;
+    display: flex;
+
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 4px 4px 6px rgb(0 0 0 / 27%);
+    
+}
+p.card-text{
+    margin-top: -7px;
+}
+
+div#noStudyPage {
+    background-image: url('/assets/noStudyPages.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 56%;
+    height: 70%;
+    
+    margin-left: 22%;
+    opacity: .5;
+    padding-right: 5px;
+    border-radius: 100px;
+    margin-bottom: -42%;
 }

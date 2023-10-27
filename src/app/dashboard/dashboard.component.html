@@ -4,66 +4,45 @@
         <div id="user-info" class="d-flex">
            <img class="logo" src="/assets/avatarLogo.svg" alt="">
 
-            <!-- Study Page 1 -->
+            
             <div id="username">
                 <h4>{{user.userName}}</h4>
-                <!-- Add your content for study page 1 here -->
+                
             </div>
 
-            <!-- Study Page 2 -->
+            
             <div id="nativeLang" class="d-flex justify-content-center">
                 <img id="americanFlag" src="assets/americanFlag.svg" alt="">
                 <h4>English</h4>
-                <!-- Add your content for study page 2 here -->
+                
             </div>
+            
         </div>
-
-        <!-- Page Content -->
+        
+        
         
     </div>
 
-    <div id="content">
+    <div id="content" class="text-center">
         <button class="btn-primary btn add">Add a studypage</button>
-            <div class="d-flex pages">
-
- <!-- Study Page 1 -->
- 
-                <button *ngFor="let page of pages" id={{page.id}} [routerLink]="['/studypage', page.id]" class="btn d-grid studypage">
-                    <div class="row">
-                        
-                            <img class="flag" id="americanFlag" src="assets/{{page.language.languageCode}}.svg" alt="">
-                        
-                        <div class="col">
-                            <h4>{{page.name}}</h4>
-                            <p id="stacks">{{page.stacks}} number of stacks</p>
-                            <p>Last accessed: {{page.dateAccessed | date: 'MM/dd/yyyy'}}</p>
-                        </div>
-                        
+        <h3>Looks like you dont have any study pages</h3>
+        <div *ngIf="pages.length == 0" id="noStudyPage"></div>
+        
+            <div *ngIf="pages.length > 0" class="d-flex pages">
+                <div *ngFor="let page of pages" id={{page.id}} [routerLink]="['/studypage', page.id]"   class="container studyPage">
+                    <div class="card">
+                      <img [src]="['/assets/' + page.language.name +'StudyPage.svg']" class="card-img-top image" alt="Album Art">
+                      <div class="card-body">
+                        <h5 class="card-title">number of stacks: {{page.stacks}} </h5>
+                        <p class="card-text">Last accessed: {{page.dateAccessed | date: 'MM/dd/yyyy'}}</p>
+                        <img id="musicPlayer" src="/assets/musicPlayer.svg" alt="">
+                      </div>
                     </div>
-                    
-                    <!-- Add your content for study page 1 here -->
-                </button>
-           
-
-                <div id="page2" class="btn d-grid studypage">
-                    <div class="row">
-
-                        <img class="flag" id="americanFlag" src="assets/americanFlag.svg" alt="">
-                        <div class="col">
-                            <h4>Study Page 1</h4>
-                            <p id="stacks">number of stacks</p>
-                            <p>Last accessed: </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Add your content for study page 1 here -->
-                </div>
-
-
-
+                  </div>
 
 
             </div>
+            
            
     </div>
  

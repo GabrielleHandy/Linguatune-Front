@@ -7,7 +7,7 @@
     </div>
     
 </div>
-<div *ngIf="cards.length > 0" class="container">
+<div *ngIf="cards.length > 0" class="container text-center">
     <button class="btn awesomeBtn" [routerLink]="['/studypage/' + studypageId + '/cards']">Back to StudyPage</button>
 <div *ngFor="let card of cards" class="flashcard" [ngClass]="{'flipped': card.isFlipped}" (click)="toggleCardFlip(card)">
     <div class="card-front">

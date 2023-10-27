@@ -16,7 +16,7 @@
 /* CSS for the card container */
 .flashcard {
     text-align: center;
-    
+    max-width: 500px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

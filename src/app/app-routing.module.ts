@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { SettingsComponent } from './settings/settings.component';
+import { LoginComponent } from './profile-page/login/login.component';
+import { SignupComponent } from './profile-page/signup/signup.component';
+import { DashboardComponent } from './profile-page/dashboard/dashboard.component';
+import { SettingsComponent } from './profile-page/settings/settings.component';
 import { StudypageComponent } from './studypage/studypage.component';
 import { CardsComponent } from './cards/cards.component';
 import { MusicComponent } from './music/music.component';

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthServiceService } from '../auth-service.service';
-import { AuthGuard } from '../auth.guard';
+import { AuthServiceService } from '../../auth-service.service';
+import { AuthGuard } from '../../auth.guard';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 

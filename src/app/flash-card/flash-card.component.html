@@ -8,41 +8,23 @@
     
 </div>
 <div *ngIf="cards.length > 0" class="container">
-<div id="title"></div>
-<!-- <div  id="flashCard" > 
-    <div *ngFor="let card of cards.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)" class="card flashcard" id="{{card.id}}">
-        <div class="card-header"><h2 class="card-title">{{card.originalText}}</h2></div>
-
-        <div class="card-body">
-            
-            <h4 class="card-text rightAnswer"  *ngIf="guessMade">{{card.translatedText}}</h4>
-  
-            
-          </div>
-          <div class="card-footer">
-              <a [routerLink]="['/song', card.fromSong.id]" class="btn btn-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-headphones" viewBox="0 0 16 16">
-                <path d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5z"/>
-              </svg>{{card.fromSong.title}} - {{card.fromSong.artist}}</a>
-  
-          </div>
-      </div>
-   
-      
-      
-      
-</div> -->
+    <button class="btn awesomeBtn" [routerLink]="['/studypage/' + studypageId + '/cards']">Back to StudyPage</button>
 <div *ngFor="let card of cards" class="flashcard" [ngClass]="{'flipped': card.isFlipped}" (click)="toggleCardFlip(card)">
     <div class="card-front">
       <!-- Front of the card -->
       <h2>{{card.originalText}}</h2>
-      <!-- Add any other content you want on the front of the card -->
+      <a [routerLink]="['/song', card.fromSong.id]" class="btn btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-headphones" viewBox="0 0 16 16">
+        <path d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5z"/>
+      </svg>{{card.fromSong.title}} - {{card.fromSong.artist}}</a>
     </div>
     <div class="card-back">
       <!-- Back of the card -->
-      <h4>{{card.translatedText}}</h4>
-      <!-- Add content for the back of the card -->
+      <h2>{{card.translatedText}}</h2>
+      
     </div>
+    
+
   </div>
 <div class="pagination">
     <button [disabled]="currentPage === 1" (click)="setPage(currentPage - 1)">Previous</button>

@@ -1,19 +1,4 @@
-.flashcard .card-body, .flashcard .card-footer{
-    
-    background-image: url('/assets/noteCard.svg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.flashcard{
-    text-align: center;
-    height:300px;
-}
-.flashcard .card-header{
 
- background-color: whitesmoke;
- border-bottom: red solid 3px;
-}
 .noCard > div > img{
     width: 100%;
     height: 50%;
@@ -30,17 +15,19 @@
 
 /* CSS for the card container */
 .flashcard {
+    text-align: center;
     
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 200px;
+    margin-top: 45px;
     height: 300px;
-    perspective: 1000px; /* Define the perspective for 3D effect */
+    perspective: 800px; /* Define the perspective for 3D effect */
   }
   
   /* CSS for the card front */
   .card-front {
+    padding-top: 107px;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
@@ -51,6 +38,7 @@
   
   /* CSS for the card back */
   .card-back {
+    padding-top: 107px;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;

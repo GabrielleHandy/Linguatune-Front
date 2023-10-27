@@ -3,7 +3,7 @@
    
     <form id="musicSearch" name="search">
         <div class="form-group" >
-            <input type="text" class="form-control" id="searchInput" placeholder="Search..." [(ngModel)]="search">
+            <input type="text" class="form-control" name="searchInput" id="searchInput" placeholder="Search..." [(ngModel)]="search"  (keyup)="searchSongs()" >
             <div class="form-check form-switch">
                 <input class="form-check-input" name="Artist" type="checkbox" role="switch" id="flexSwitchCheckDefault" [(ngModel)]="artistSearch"  (ngModelChange)="setArtistSearch()">
                 <label class="form-check-label"  for="flexSwitchCheckDefault" >Search By Artist</label>

@@ -9,7 +9,7 @@ import { UserService } from '../user.service';
 })
 export class MusicComponent implements OnInit {
   songs: Array<any>  = [];
-  searchedSongs: Array<any> = [];
+  fullSongList: Array<any> = [];
   studypageId: any;
   pageSize: number = 1;
   totalItems: number = 1;
@@ -45,6 +45,7 @@ export class MusicComponent implements OnInit {
       if( lang == 'fr'){
         this.userService.getFrenchSongs().subscribe(data => {
           this.songs = (data as any).data
+          this.fullSongList = (data as any).data
 
         })
       }else{
@@ -68,5 +69,24 @@ export class MusicComponent implements OnInit {
     
     console.log(this.artistSearch)
   }
+  searchSongs(){
+    console.log(this.search)
+    if(!this.search && this.search.trim() == '') {
+      this.songs = this.fullSongList;
+      return
+    }
+
+    const filteredSongs = this.songs.filter(song => {
+      // Perform a case-insensitive search by converting both song title and search input to lowercase
+      const songTitle = song.title.toLowerCase();
+      const searchQuery = this.search.toLowerCase();
+    
+      // Check if the song title contains the search input
+      return songTitle.includes(searchQuery);
+    });
+
+    this.songs = filteredSongs;
+  }
+ 
 
 }

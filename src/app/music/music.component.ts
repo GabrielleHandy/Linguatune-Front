@@ -65,25 +65,40 @@ export class MusicComponent implements OnInit {
   setPage(pageNumber: number): void {
     this.currentPage = pageNumber;
   }
-  setArtistSearch(){
-    
-    console.log(this.artistSearch)
-  }
+
   searchSongs(){
-    console.log(this.search)
+    let filteredSongs; 
     if(!this.search && this.search.trim() == '') {
       this.songs = this.fullSongList;
       return
     }
 
-    const filteredSongs = this.songs.filter(song => {
-      // Perform a case-insensitive search by converting both song title and search input to lowercase
-      const songTitle = song.title.toLowerCase();
-      const searchQuery = this.search.toLowerCase();
-    
-      // Check if the song title contains the search input
-      return songTitle.includes(searchQuery);
-    });
+    if(this.artistSearch){
+       filteredSongs = this.songs.filter(song => {
+        // Perform a case-insensitive search by converting both song title and search input to lowercase
+        const songArtist = song.artist.toLowerCase();
+        const searchQuery = this.search.toLowerCase();
+      
+        // Check if the song title contains the search input
+        return songArtist.includes(searchQuery);
+      });
+  
+
+
+
+    }else{
+       filteredSongs = this.songs.filter(song => {
+        // Perform a case-insensitive search by converting both song title and search input to lowercase
+        const songTitle = song.title.toLowerCase();
+        const searchQuery = this.search.toLowerCase();
+      
+        // Check if the song title contains the search input
+        return songTitle.includes(searchQuery);
+      });
+
+
+    }
+   
 
     this.songs = filteredSongs;
   }

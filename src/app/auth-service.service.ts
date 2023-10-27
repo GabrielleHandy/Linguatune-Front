@@ -10,8 +10,6 @@ export class AuthServiceService {
    
 
     private backendUrl = 'http://localhost:1234/auth/users';
-    private loggedIn = false;
-    private user:any;
     private token:string = '';
     private result:any;
    
@@ -19,10 +17,14 @@ export class AuthServiceService {
     constructor(private http: HttpClient, private router: Router) {}
   
     registerUser(userData: any){
-      this.result = this.http.post(`${this.backendUrl}/register`, userData)
-      this.user = this.result.data;
+      this.http.post(`${this.backendUrl}/register`, userData).subscribe(data =>{
+        alert("Registered Sucessfully redirecting back to the login page")
+        setTimeout(() =>{this.router.navigateByUrl("/login");}, 3000);
+        
 
-      return ;
+
+      })
+      
     }
   
     loginUser(credentials: any): Observable<any> {
@@ -46,12 +48,11 @@ export class AuthServiceService {
     
     setUser (userInfo: any)  {
       sessionStorage.setItem('user', JSON.stringify(userInfo));
-      this.loggedIn = true;
+      
     }
   
    
     logoutUser(){
-      this.loggedIn = false;
       sessionStorage.clear()
       this.router.navigateByUrl(''); 
     }

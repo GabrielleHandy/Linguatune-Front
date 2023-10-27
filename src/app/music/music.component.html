@@ -1,27 +1,33 @@
 <div id="musicContainer" class="d-flex align-content-center flex-column" >
     
    
-    <form id="musicSearch">
-        <div class="form-group">
-            <input type="text" class="form-control" id="searchInput" placeholder="Search...">
+    <form id="musicSearch" name="search">
+        <div class="form-group" >
+            <input type="text" class="form-control" id="searchInput" placeholder="Search..." [(ngModel)]="search">
             <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                <label class="form-check-label" for="flexSwitchCheckDefault">Search By Artist</label>
+                <input class="form-check-input" name="Artist" type="checkbox" role="switch" id="flexSwitchCheckDefault" [(ngModel)]="artistSearch"  (ngModelChange)="setArtistSearch()">
+                <label class="form-check-label"  for="flexSwitchCheckDefault" >Search By Artist</label>
               </div>
         </div>
     </form>
     
     <div class="results">
-        <h2>Songs</h2>
-        <button class="song btn d-flex" [routerLink]="['/song', 1]">
+        <div class="pagination">
+            <button [disabled]="currentPage === 1" (click)="setPage(currentPage - 1)">Previous</button>
+            <button [disabled]="currentPage === totalNumberOfPages" (click)="setPage(currentPage + 1)">Next</button>
+          </div>
+        <h3>Songs</h3>
+        
+        <button *ngFor="let song of songs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)"  class="song btn d-flex" [routerLink]="['/song', song.id]">
             <img src="assets/musicLogo.svg" alt="">
             <div>
 
-                <h3>title</h3>
-                <h5>artit name</h5>
+                <h4>{{song.title}}</h4>
+                <h5>{{song.artist}}</h5>
             
             </div>
             
         </button>
+        
 
 </div>

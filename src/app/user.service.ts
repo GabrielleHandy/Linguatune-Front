@@ -18,6 +18,12 @@ export class UserService {
     return this.http.get(backendUrl, {headers: this.headers})
 
   }
+  getPageById(id: string){
+    const backendUrl = `http://localhost:1234/api/studypages/${id}`
+    
+    return this.http.get(backendUrl, {headers: this.headers})
+
+  }
   getSong(id:string){
     const backendUrl = `http://localhost:1234/api/songs/${id}`
     return this.http.get(backendUrl, {headers: this.headers})
@@ -28,5 +34,15 @@ export class UserService {
 
   }
  
-  
+  getFrenchSongs(){
+    const backendUrl = `http://localhost:1234/api/songs/French`
+    return this.http.get(backendUrl, {headers: this.headers})
+  }
+
+  getSpanishSongs(){
+    const backendUrl = `http://localhost:1234/api/songs/Spanish`
+    return this.http.get(backendUrl, {headers: this.headers})
+
+
+  }
 }

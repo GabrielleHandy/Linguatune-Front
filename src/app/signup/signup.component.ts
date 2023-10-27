@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthServiceService } from '../auth-service.service';
 
 
 @Component({
@@ -11,8 +12,16 @@ export class SignupComponent {
   email = '';
   username = '';
   
+  constructor(private authService: AuthServiceService){}
   signup() {
-    console.log('signup');
+    let user = {
+      userName: this.username,
+      password: this.password,
+      emailAddress: this.email,
+      nativeLanguage: "English",
+
+    }
+    this.authService.registerUser(user)
   
   }
 }

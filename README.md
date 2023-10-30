@@ -1,5 +1,7 @@
+<p align="center">
+  <img src="https://github.com/GabrielleHandy/Linguatune-Front/assets/91081738/10bb69fe-cbb1-4c49-9ae6-4802b1e0fece" >
+</p>
 
- ![Untitled (Logo)](https://github.com/GabrielleHandy/Linguatune-Front/assets/91081738/10bb69fe-cbb1-4c49-9ae6-4802b1e0fece)
 # LinguaTune
 
 ## Project Description
@@ -50,6 +52,9 @@ To run LinguaTune on your local machine, follow these steps:
 4. Start the Angular application: `ng serve`
 5. Start the Spring Boot server [Link to Backend](https://github.com/GabrielleHandy/LinguaTune): `mvn spring-boot:run`   
 6. Access the application in your browser at `http://localhost:4200`
+
+## Video Demo
+[LinguaTune Demo](https://github.com/GabrielleHandy/LinguaTune/assets/91081738/3dbcb1d7-9720-4cc7-9291-f71bf0549efd)
 
 
 ## Challenges Faced
